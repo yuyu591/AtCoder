@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-  string s,t;
-  cin >> s >> t;
+  string s;
+  cin >> s;
   
   cout << s << " san" << endl;
 }
