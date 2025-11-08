@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n,m,k;
+    cin >> n >> m >> k;
+
+    vector<int> h(n), b(m);
+    for (int i = 0; i < n; i++) {
+        cin >> h.at(i);
+    }
+    for (int i = 0; i < m; i++) {
+        cin >> b.at(i);
+    }
+
+    sort(h.begin(), h.end());
+    sort(b.begin(), b.end());
+
+    int ih = 0, ib = 0; //hとbのインデックス
+    int cnt = 0; 
+    while (ih < n && ib < m) {
+        if (h.at(ih) <= b.at(ib)) {
+            cnt++;
+            ih++;
+            ib++;
+        } else {
+            ib++;
+        }
+    }
+
+    if (cnt >= k) cout << "Yes" << endl;
+    else cout << "No" << endl;
+
+    return 0;
+}
