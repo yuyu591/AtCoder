@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+int main() {
+    int n;
+    string s;
+    cin >> n >> s;
+
+    string ans = s;
+    while (ans.size() < n) {
+        ans = "o" + ans;
+    }
+
+    cout << ans << endl;
+    return 0;
+}
