@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+
+int main() {
+    int h,w,n;
+    cin >> h >> w >> n;
+
+    vector<vector<int>> a(h, vector<int>(w));
+    for (int i = 0; i < h; i++) {
+        for (int k = 0; k < w; k++) {
+            cin >> a.at(i).at(k);
+        }
+    }
+
+    vector<int> b(n);
+    for (int i = 0; i < n; i++) {
+        cin >> b.at(i);
+    }
+
+    int max = 0;
+    for (int ih = 0; ih < h; ih++) {
+        int total = 0;
+        for (int ib = 0; ib < n; ib++) {
+            for (int iw = 0; iw < w; iw++) {
+                if (a.at(ih).at(iw) == b.at(ib)) total++;
+            }
+        }
+        if(total > max) max = total;
+    }
+    
+    cout << max << endl;
+    return 0;
+}
