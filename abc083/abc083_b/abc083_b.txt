@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+
+int main() {
+    int n,a,b;
+    cin >> n >> a >> b;
+
+    int total = 0;
+    for (int num = 1; num <= n; num++) {
+        int res = num;
+        int sum = 0;
+        while(res >= 10) {
+            sum += res % 10;
+            res /= 10;
+        }
+        sum += res;
+        if (sum >= a && sum <= b) total += num; 
+    }
+
+    cout << total << endl;
+}
