@@ -7,11 +7,14 @@ int main() {
     int k,a,b;
     cin >> k >> a >> b;
 
+    bool exist = false;
     for (int num = a; num <= b; num++) {
         if (num % k == 0) {
-            cout << "OK" << endl;
-            return 0;
+            exist = true;
+            break;
         }
     }
-    cout << "NG" << endl;
+
+    if (exist) cout << "OK" << endl;
+    else cout << "NG" << endl;
 }
