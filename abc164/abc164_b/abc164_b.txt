@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+
+int main() {
+    int rem_taka, atack_taka, rem_ao, atack_ao;
+    cin >> rem_taka >> atack_taka >> rem_ao >> atack_ao;
+
+    int cnt = 1;
+    while (rem_taka > 0 && rem_ao > 0) {
+        if (cnt % 2 == 1) { //奇数ターンは高橋
+            rem_ao -= atack_taka;
+        } else {
+            rem_taka -= atack_ao;
+        }
+        cnt++;
+    }
+    
+    if (rem_taka <= 0) cout << "No" << endl;
+    else cout << "Yes" << endl;
+}
