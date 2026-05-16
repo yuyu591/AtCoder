@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+
+int main() {
+    int h,w;
+    cin >> h >> w;
+
+
+    if (h == 1 && w == 1) {
+        cout << 0 << endl;
+        return 0;
+    } else if (h == 1) {
+        cout << "1 ";
+        rep(i, w - 2) cout << "2 ";
+        cout << "1" << endl; 
+        return 0;
+    } else if (w == 1) {
+        cout << "1" << endl;
+        rep(i, h - 2) cout << "2" << endl;
+        cout << "1" << endl;
+        return 0;
+
+    } else {
+        string text1;
+        text1 += "2 ";
+        rep(i, w - 2) {
+            text1 += "3 ";
+        }
+        text1 += "2";
+
+        string text2;
+        text2 += "3 ";
+        rep(i, w - 2) {
+            text2 += "4 ";
+        }
+        text2 += "3";
+
+        cout << text1 << endl;
+        rep(i, h - 2) cout << text2 << endl;
+        cout << text1 << endl;
+        return 0;
+    }
+}
