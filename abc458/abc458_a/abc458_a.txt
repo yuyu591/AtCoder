@@ -8,13 +8,7 @@ int main() {
     int n;
     cin >> s >> n;
 
-    int len = s.size();
-    rep(i,30) {
-        if (i < n || i >= len - n) {
-            continue;
-        }
-        cout << s.at(i);
-    }
-    cout << endl;
+    string ans = s.substr(n, s.size() - n * 2);
+    cout << ans << endl;
     return 0;
 }
