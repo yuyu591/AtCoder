@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+
+priority_queue<int> small;
+priority_queue<int, vector<int>, greater<int>> large;
+
+int main() {
+    int x,q;
+    cin >> x >> q;
+
+    rep(qi,q) {
+        rep(i,2) {
+            int n;
+            cin >> n;
+            if (n > x) large.push(n);
+            else small.push(n);
+
+            if (small.size() > large.size()) {
+                large.push(x);
+                x = small.top(); small.pop();
+            }
+            if (large.size() > small.size()) {
+                small.push(x);
+                x = large.top(); large.pop();
+            }
+        }
+        cout << x << endl;
+    }
+    return 0;
+}
