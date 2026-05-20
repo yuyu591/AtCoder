@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+
+const int dx[8] = {1,0,-1,0,1,1,-1,-1};
+const int dy[8] = {0,1,0,-1,-1,1,1,-1};
+
+int main() {
+    int h,w;
+    cin >> h >> w;
+
+    vector<string> v(h);
+    rep(i, h) cin >> v.at(i);
+
+    rep(ih, h) {
+        rep(iw, w) {
+            if (v.at(ih).at(iw) == '#') {
+                continue;
+            }
+
+            int cnt = 0;
+            rep(d,8) {//8方向について調べる
+                int xx = iw + dx[d];
+                int yy = ih + dy[d];
+                if (xx < 0 || xx >= w) continue;
+                if (yy < 0 || yy >= h) continue;
+                if (v.at(yy).at(xx) == '#') cnt++;
+            }
+            v.at(ih).at(iw) = cnt + '0';
+        }
+    }
+
+    rep(i, h) {
+        cout << v.at(i) << endl;
+    }
+    return 0;
+}
