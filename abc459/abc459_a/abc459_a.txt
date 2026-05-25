@@ -8,14 +8,9 @@ int main() {
     cin >> x;
 
     string s = "HelloWorld";
-
-    /*
     rep(i, 10) {
         if (i == x - 1) continue;
         cout << s.at(i);
     }
-    */
-
-    cout << s.erase(x - 1, 1) << endl;
     return 0;
 }
