@@ -7,7 +7,6 @@ int main() {
     int x;
     cin >> x;
 
-    /*
     vector<int> v;
     rep(i,6) rep(k,6) rep(j,6) {
         v.push_back(i+1 + k+1 + j+1);
@@ -19,9 +18,5 @@ int main() {
         }
     }
     cout << "No" << endl;
-    */
-
-    if (x >= 3 && x <= 18) cout << "Yes" << endl;
-    else cout << "No" << endl;
     return 0;
 }
