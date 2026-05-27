@@ -5,7 +5,9 @@ using ll = long long;
 
 int main() {
     double d; cin >> d;
-    double ans = d * d * M_PI / 4.0;
-    cout << fixed << setprecision(20) << ans << endl;
+    double r = d / 2.0;
+    double pi = 3.141592653589793;
+    double ans = pi * r * r;
+    cout << fixed << setprecision(14) << ans << endl;
     return 0;
 }
