@@ -1,0 +1,30 @@
+//もう一回冷静にやる
+
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+
+int main() {
+    int n; cin >> n;
+    vector<string> s(n);
+    rep(i,n) cin >> s.at(i);
+
+    int m; cin >> m;
+    vector<string> t(m);
+    rep(i,m) cin >> t.at(i);
+
+    int ans = 0;
+    rep(k, n) {
+        int point = 0;
+        rep(in, n) {
+            if(s.at(k) == s.at(in)) point++;
+        }
+        rep(im, m) {
+            if(s.at(k) == t.at(im)) point--;
+        }
+        ans = max(ans, point);
+    }
+    cout << ans << endl;
+    return 0;
+}
