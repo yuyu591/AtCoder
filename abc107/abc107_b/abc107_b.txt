@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+
+int main() {
+    int h,w;
+    cin >> h >> w;
+
+    vector<string> a(h);
+    rep(i,h) cin >> a.at(i);
+
+    //行の確認
+    for (int i = a.size() - 1; i >= 0; i--) {
+        bool space = true;
+        rep(k, a.at(i).size()) {
+            if (a.at(i).at(k) == '#') {
+                space = false;
+            }
+        }
+        if(space) { //行が全て"."の場合
+            a.erase(a.begin() + i);
+        }
+    }
+    
+    //列の確認
+    for (int k = a.at(0).size() - 1; k >= 0; k--) {
+        bool space = true;
+        rep(i,a.size()) {
+            if (a.at(i).at(k) == '#') {
+                space = false;
+            }
+        }
+        if(space) { //列が全て"."の場合
+            rep(i,a.size()) a.at(i).erase(a.at(i).begin() + k);
+        }
+    }
+
+    rep(i, a.size()) cout << a.at(i) << endl;
+    return 0;
+}
