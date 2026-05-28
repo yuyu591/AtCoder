@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+
+int main() {
+    vector<int> A(6),B(6),C(6);
+    rep(i,6) cin >> A.at(i);
+    rep(i,6) cin >> B.at(i);
+    rep(i,6) cin >> C.at(i);
+
+    double cnt = 0;
+    rep(ia, 6) { int a = A.at(ia);
+        rep(ib, 6) { int b = B.at(ib);
+            rep(ic, 6) { int c = C.at(ic);
+                if((a == 4 && b == 5 && c == 6)
+                    || (a == 4 && b == 6 && c == 5)
+                    || (a == 5 && b == 4 && c == 6)
+                    || (a == 5 && b == 6 && c == 4)
+                    || (a == 6 && b == 4 && c == 5)
+                    || (a == 6 && b == 5 && c == 4)) {
+                        cnt++;
+                    }
+            }
+        }
+    }
+    cout << fixed << setprecision(10) << cnt / 216.0 << endl;
+    return 0;
+}
