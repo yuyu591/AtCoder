@@ -7,16 +7,25 @@ int main() {
     int t,x;
     cin >> t >> x;
 
-    int save;
-    cin >> save;
-    cout << 0 << " " << save << endl;
+    vector<int> time;
+    vector<int> ans;
+
+    int a; cin >> a;
+    time.push_back(0);
+    ans.push_back(a);
+    int pre = a;
 
     rep(i, t) {
-        int a; cin >> a;
-        if (abs(save - a) >= x) {
-            cout << i + 1 << " " << a << endl;
-            save = a;
+        cin >> a;
+        if (abs(a - pre) >= x) {
+            time.push_back(i + 1);
+            ans.push_back(a);
+            pre = a;
         }
+    }
+    
+    rep(i, time.size()) {
+        cout << time.at(i) << " " << ans.at(i) << endl;
     }
     return 0;
 }
