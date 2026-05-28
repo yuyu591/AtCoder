@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+
+int main() {
+    int n,m; cin >> n >> m;
+
+    vector<int> ans(m);
+    rep(i,n) {
+        int a,b;
+        cin >> a >> b;
+        ans.at(a-1)--;
+        ans.at(b-1)++;
+    }
+
+    rep(i,m) cout << ans.at(i) << endl;
+    return 0;
+}
