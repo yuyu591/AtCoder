@@ -6,20 +6,27 @@ using ll = long long;
 int main() {
     int n,m; cin >> n >> m;
 
-    vector<int> a(n),b(m);
-    rep(i,n) cin >> a.at(i);
-    rep(i,m) cin >> b.at(i);
-
-    sort(a.rbegin(), a.rend());
-    sort(b.rbegin(), b.rend());
-
-    int index = 0;
-    int cnt = 0;
+    priority_queue<int> a,b;
+    rep(i,n) {
+        int A; cin >> A;
+        a.push(A);
+    }
     rep(i,m) {
-        if ((index < n) && (b.at(i) / 2.0 <= a.at(index))) {
-            cnt++;
-            index++;
+        int B; cin >> B;
+        b.push(B);
+    }
+
+    int cnt = 0;
+    rep(i, m) {
+        if (a.empty()) {
+            break;
         }
+        if (b.top() / 2.0 <= a.top()) {
+            a.pop();
+            cnt++;
+        }
+        b.pop();
     }
     cout << cnt << endl;
+    return 0;
 }
