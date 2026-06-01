@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+using namespace std;
+using ll = long long;
+
+int main() {
+    int t; cin >> t;
+
+    rep(i,t) {
+        ll x1,y1,r1,x2,y2,r2;
+        cin >> x1 >> y1 >> r1 >> x2 >> y2 >> r2;
+
+        ll d = (x2-x1) * (x2-x1) + (y2-y1) * (y2-y1);
+        ll mn = abs(r1 - r2);
+        ll mx = (r1 + r2);
+        if ((mn*mn <= d) && (d <= mx*mx)) {
+            cout << "Yes" << endl;
+        } else {
+            cout << "No" << endl;
+        }
+    }
+    return 0;
+}
