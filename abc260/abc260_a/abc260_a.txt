@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define rep(i,n) for (int i = 0; i < (n); i++)
+#define rep1(i,n) for (int i = 1; i <= (n); i++)
+
+#define YES cout<< "Yes" << endl
+#define NO cout << "No" << endl
+#define YN {cout << "Yes" << endl;} else {cout << "No" << endl;} // if(a==b)YN;
+#define dame cout << -1 << endl
+
+using ll = long long;
+
+int main() {
+    string s; cin >> s;
+
+    string alpha = "abcdefghijklmnopqrstuvwxyz";
+    for (auto a : alpha) {
+        int cnt = 0;
+        for (auto c : s) {
+            if (a == c) cnt++;
+        }
+        if (cnt == 1) {
+            cout << a << endl;
+            return 0;
+        }
+    }
+    dame;
+    return 0;
+}
