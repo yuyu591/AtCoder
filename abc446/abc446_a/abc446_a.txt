@@ -7,11 +7,7 @@ using ll = long long;
 int main() {
     string s; cin >> s;
 
-    cout << "Of";
-    for (auto c : s) {
-        if (isupper(c)) cout << (char)tolower(c);
-        else cout << c;
-    }
-    cout << endl;
+    s.at(0) = (char)tolower(s.at(0));
+    cout << "Of" << s << endl;
     return 0;
 }
