@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+#define rep1(i,n) for (int i = 1; i <= (n); i++)
+using namespace std;
+using ll = long long;
+
+int main() {
+    string s; cin >> s;
+
+    bool flag = true;
+    rep(i, s.size()) {
+        char c = s.at(i);
+        if (i == 0 && islower(c)) {
+            flag = false;
+            break;
+        } else if (i != 0 && isupper(c)) {
+            flag = false;
+            break;
+        }
+    }
+    if (flag) cout << "Yes" << endl;
+    else cout << "No" << endl;
+    return 0;
+}
