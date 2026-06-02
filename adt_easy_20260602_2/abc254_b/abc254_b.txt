@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define rep(i,n) for (int i = 0; i < (n); i++)
+#define rep1(i,n) for (int i = 1; i <= (n); i++)
+
+#define YES cout<< "Yes" << endl
+#define NO cout << "No" << endl
+#define YN {cout << "Yes" << endl;} else {cout << "No" << endl;} // if(a==b)YN;
+#define dame cout << -1 << endl
+
+using ll = long long;
+
+int main() {
+    int n; cin >> n;
+    vector<vector<int>> v(n);
+    rep(i,n) {
+        vector<int> w(i+1);
+        v.at(i) = w;
+        rep(j, i+1) {
+            if (j == 0 || j == i) {
+                v.at(i).at(j) = 1;
+            }
+            else {
+                v.at(i).at(j) = v.at(i-1).at(j-1) + v.at(i-1).at(j);
+            }
+        }
+    }
+
+    rep(i,n) {
+        rep(k,i+1) {
+            cout << v.at(i).at(k);
+            if (k != n-1) cout << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
