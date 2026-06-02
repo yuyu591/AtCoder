@@ -16,11 +16,8 @@ int main() {
     rep(i,5) cin >> v.at(i);
 
     sort(v.begin(),v.end());
-    if (((v[0] == v[1] && v[1] == v[2]) && (v[3] == v[4])) 
-        || ((v[0] == v[1]) && (v[2] == v[3] && v[3] == v[4]))){
-            YES;
-            return 0;
-    }
-    NO;
+    if (((v[0] == v[2]) && (v[3] == v[4])) || ((v[0] == v[1]) && (v[2] == v[4]))) {
+        YES;
+    } else NO;
     return 0;
 }
