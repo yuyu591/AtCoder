@@ -16,15 +16,12 @@ int main() {
         if (isupper(c)) flag1 = true;
         else if (islower(c)) flag2 = true;
     }
-
-    rep(i, 26) {
-    	int cnt = 0;
-        rep(k, s.size()) {
-            if (alpha.at(i) == s.at(k)) cnt++;
-        }
-        if (cnt > 1) {
-            flag3 = false;
-            break;
+    
+    rep(i,s.size()) {
+        rep(k,s.size()) {
+            if (i != k && s.at(i) == s.at(k)) {
+                flag3 = false;
+            }
         }
     }
 
