@@ -14,8 +14,8 @@ using ll = long long;
 int main() {
     string s; cin >> s;
 
-    string alpha = "abcdefghijklmnopqrstuvwxyz";
-    for (auto a : alpha) {
+    //string alpha = "abcdefghijklmnopqrstuvwxyz";
+    for (char a = 'a'; a <= 'z'; a++) {
         int cnt = 0;
         for (auto c : s) {
             if (a == c) cnt++;
@@ -26,5 +26,7 @@ int main() {
         }
     }
     dame;
+
+
     return 0;
 }
