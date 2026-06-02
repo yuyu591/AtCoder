@@ -1,0 +1,33 @@
+//なんかちがうんだけど？？？
+//https://www.youtube.com/watch?v=PTh9w868eP0&t=350s
+
+#include <bits/stdc++.h>
+#define rep(i,n) for (int i = 0; i < (n); i++)
+#define rep1(i,n) for (int i = 1; i <= (n); i++)
+using namespace std;
+using ll = long long;
+
+int main() {
+    int h,w; cin >> h >> w;
+    vector<string> v(h);
+    rep(i,h) cin >> v.at(i);
+
+    int cnt = 0;
+    rep(h1,h) rep(w1,w) { //左上の座標を決める
+        for (int h2 = h1; h2 < h; h2++) { //右下の座標を決める
+            for (int w2 = w1; w2 < w; w2++) {
+                bool flag = true;
+                for (int i = h1; i <= h2; i++) { //長方形の中を走査
+                    for (int k = w1; k <= w2; k++) {
+                        if (v.at(i).at(k) != v.at(h1+h2-i).at(w1+w2-k)) {
+                            flag = false;
+                        }
+                    }
+                }
+                if (flag) cnt++;
+            }
+        }
+    }
+    cout << cnt << endl;
+    return 0;
+}
