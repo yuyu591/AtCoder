@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define rep(i,n) for (int i = 0; i < (n); i++)
+#define rep1(i,n) for (int i = 1; i <= (n); i++)
+#define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
+
+#define Yes cout<< "Yes" << endl
+#define No cout << "No" << endl
+#define YES cout<< "YES" << endl
+#define NO cout << "NO" << endl
+#define yn {cout << "Yes" << endl;} else {cout << "No" << endl;} // if(a==b)yn;
+#define YN {cout << "YES" << endl;} else {cout << "NO" << endl;} // if(a==b)yn;
+#define dame cout << -1 << endl
+
+using ll = long long;
+
+const int INF = 1e9;
+
+int main() {
+    int n,k; cin >> n >> k;
+    vector<int> h(n);
+    rep(i,n) cin >> h.at(i);
+
+    sort(all(h));
+
+    int mini = INF;
+    rep(i, h.size() - k + 1) {
+        int score = h.at(i + k - 1) - h.at(i);
+        mini = min(mini, score);
+    }
+    cout << mini << endl;
+    return 0;
+}
