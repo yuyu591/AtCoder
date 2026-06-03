@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define rep(i,n) for (int i = 0; i < (n); i++)
+#define rep1(i,n) for (int i = 1; i <= (n); i++)
+
+#define YES cout<< "Yes" << endl
+#define NO cout << "No" << endl
+#define YN {cout << "Yes" << endl;} else {cout << "No" << endl;} // if(a==b)YN;
+#define dame cout << -1 << endl
+
+using ll = long long;
+
+int main() {
+    int n,x; cin >> n >> x;
+
+    vector<int> m(n);
+    int total = 0;
+    rep(i,n) {
+        cin >> m.at(i);
+        total += m.at(i);
+    }
+
+    sort(m.begin(), m.end());
+    int cnt = n + (x - total) / m.at(0);
+    cout << cnt << endl;
+    return 0;
+}
