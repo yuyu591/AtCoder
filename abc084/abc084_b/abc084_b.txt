@@ -22,20 +22,12 @@ int main() {
     int a,b; cin >> a >> b;
     string s; cin >> s;
 
-    if (s.size() != a + b + 1) {
-        No;
-        return 0;
-    }
-    if (s.at(a) != '-') {
-        No;
-        return 0;
-    }
+    bool ok = true;
+    if (s.size() != a + b + 1) ok = false;
+    if (s.at(a) != '-') ok = false;
     rep(i, s.size()) {
-        if ((i != a) && ((s.at(i) < '0') || (s.at(i) > '9'))) {
-            No;
-            return 0;
-        }
+        if ((i != a) && ((s.at(i) < '0') || (s.at(i) > '9'))) ok = false;
     }
-    Yes;
+    if (ok) yn;
     return 0;
 }
